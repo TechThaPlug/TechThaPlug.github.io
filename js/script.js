@@ -29,7 +29,7 @@
       menuButton.setAttribute("aria-expanded", String(isOpen));
       menuButton.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
       );
       navMenu.classList.toggle("is-open", isOpen);
     });
@@ -62,11 +62,11 @@
   // Reveal content as it enters the viewport. The page remains readable
   // when reduced motion is requested or IntersectionObserver is unavailable.
   const revealTargets = document.querySelectorAll(
-    ".section-heading, .about-aside, .about-copy, .project-card, .skills-intro, .skill-group, .resume-card, .resume-preview-wrap, .contact-inner",
+    ".section-heading, .about-aside, .about-copy, .project-card, .skills-intro, .skill-group, .resume-card, .resume-preview-wrap, .contact-inner"
   );
 
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
+    "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if (!reduceMotion && "IntersectionObserver" in window) {
@@ -81,7 +81,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" }
     );
 
     revealTargets.forEach((element) => observer.observe(element));
