@@ -4,469 +4,327 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>TechThaPlug | Full-Stack Web Developer</title>
-
     <meta
       name="description"
-      content="Welcome to TechThaPlug's developer portfolio. Explore full-stack web development projects, technical skills, and get in touch for collaboration."
+      content="Anthony W. Maina - Full-Stack Developer portfolio. Explore my software projects, technical skills, professional experience, and resume."
     />
 
     <meta
       name="keywords"
-      content="TechThaPlug, web developer, full-stack developer, JavaScript, Node.js, Express, PostgreSQL"
+      content="Anthony Maina, Full-Stack Developer, Web Developer, JavaScript, Node.js, React, Portfolio"
     />
 
-    <meta name="author" content="TechThaPlug" />
+    <meta name="author" content="Anthony W. Maina" />
 
-    <meta name="robots" content="index, follow" />
-
-    <meta name="theme-color" content="#090909" />
-
-    <link rel="canonical" href="https://techthaplug.github.io/" />
-
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="TechThaPlug | Full-Stack Web Developer"
-    />
-    <meta
-      property="og:description"
-      content="Explore my web development projects, skills, and work."
-    />
-    <meta property="og:url" content="https://techthaplug.github.io/" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta
-      name="twitter:title"
-      content="TechThaPlug | Full-Stack Web Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Explore my web development portfolio and projects."
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Anthony W. Maina | Full-Stack Developer</title>
 
     <link rel="stylesheet" href="css/style.css" />
-
-    <script src="js/script.js" defer></script>
   </head>
 
   <body>
-    <!-- Accessibility -->
-    <a class="skip-link" href="#main">Skip to content</a>
-
     <!-- Navigation -->
-    <header class="site-header" id="top">
-      <nav class="nav container" aria-label="Main navigation">
-        <a href="#top" class="logo" aria-label="TechThaPlug home">
-          <span class="logo-mark">&lt;/&gt;</span>
-          <span>TechThaPlug<span class="logo-dot">.</span></span>
-        </a>
+    <header class="header">
+      <nav class="navbar container">
+        <a href="#home" class="logo">Anthony<span>.</span></a>
 
-        <button
-          class="menu-toggle"
-          id="menu-toggle"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="nav-links"
-        >
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
           <li>
-            <a href="#contact" class="nav-link nav-contact"
-              >Let's talk <span aria-hidden="true">↗</span></a
-            >
+            <a href="#contact" class="nav-link nav-contact">
+              Let's talk <span aria-hidden="true">↗</span>
+            </a>
           </li>
         </ul>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </header>
 
-    <main id="main">
+    <main>
       <!-- Hero -->
-      <section class="hero section container" id="home">
-        <div class="hero-content">
-          <div class="availability">
-            <span class="availability-dot"></span>
-            <span>Building, learning &amp; evolving</span>
-          </div>
-
-          <p class="hero-eyebrow">WEB DEVELOPER &amp; CREATIVE BUILDER</p>
+      <section class="hero section" id="home">
+        <div class="container hero-content">
+          <p class="hero-eyebrow">WELCOME TO MY DIGITAL SPACE</p>
 
           <h1>
-            Turning ideas into
-            <span class="hero-highlight">digital experiences.</span>
+            Building digital
+            <span class="text-muted">experiences.</span>
           </h1>
 
           <p class="hero-description">
-            I build clean, responsive, and interactive websites that combine
-            thoughtful design with practical functionality. Always learning.
-            Always building. Always pushing further.
+            I'm Anthony W. Maina, a developer passionate about building
+            responsive web applications, secure backend systems, and meaningful
+            digital experiences.
           </p>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              Explore my work <span aria-hidden="true">↗</span>
-            </a>
+            <a href="#projects" class="btn btn-primary"> Explore My Work ↗ </a>
 
-            <a href="#contact" class="btn btn-secondary"> Get in touch </a>
+            <a href="#contact" class="btn btn-secondary"> Get In Touch </a>
           </div>
-
-          <div class="hero-socials">
-            <a
-              href="https://github.com/TechThaPlug"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
-            <span class="social-divider"></span>
-            <span>Based on the web. Built for the web.</span>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="visual-grid"></div>
-
-          <div class="visual-card visual-card-main">
-            <div class="visual-card-top">
-              <span class="window-dots"> <i></i><i></i><i></i> </span>
-              <span class="visual-label">creative.process</span>
-            </div>
-
-            <div class="code-visual">
-              <p>
-                <span class="code-muted">01</span>
-                <span class="code-purple">const</span> developer = {
-              </p>
-              <p>
-                <span class="code-muted">02</span> &nbsp; name:
-                <span class="code-green">'TechThaPlug'</span>,
-              </p>
-              <p>
-                <span class="code-muted">03</span> &nbsp; passion:
-                <span class="code-green">'building'</span>,
-              </p>
-              <p>
-                <span class="code-muted">04</span> &nbsp; mindset:
-                <span class="code-green">'growth'</span>,
-              </p>
-              <p>
-                <span class="code-muted">05</span> &nbsp; status:
-                <span class="code-orange">'coding'</span>
-              </p>
-              <p><span class="code-muted">06</span> };</p>
-              <p class="code-spacer"></p>
-              <p>
-                <span class="code-muted">07</span>
-                <span class="code-purple">while</span> (alive) {
-              </p>
-              <p><span class="code-muted">08</span> &nbsp; learn();</p>
-              <p><span class="code-muted">09</span> &nbsp; build();</p>
-              <p><span class="code-muted">10</span> &nbsp; improve();</p>
-              <p><span class="code-muted">11</span> }</p>
-            </div>
-
-            <div class="visual-card-bottom">
-              <span>● system.online</span>
-              <span>v1.0.0</span>
-            </div>
-          </div>
-
-          <div class="floating-tag tag-top">
-            <span class="tag-icon">✳</span>
-            <span>Clean code</span>
-          </div>
-
-          <div class="floating-tag tag-bottom">
-            <span class="tag-icon">↗</span>
-            <span>Creative thinking</span>
-          </div>
-        </div>
-
-        <div class="hero-bottom">
-          <span>SCROLL TO EXPLORE</span>
-          <span class="scroll-line"></span>
         </div>
       </section>
 
       <!-- About -->
-      <section class="about section container" id="about">
-        <div class="section-heading">
-          <span class="section-index">01 / ABOUT</span>
-          <h2>
-            Curiosity drives me.<br /><span class="text-muted"
-              >Code brings it to life.</span
-            >
-          </h2>
-        </div>
+      <section class="about-section section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-index">01 / ABOUT ME</span>
 
-        <div class="about-content">
-          <div class="about-label">
-            <span class="accent-square"></span>
-            <span>A little about me</span>
+            <h2>
+              A little about
+              <span class="text-muted">who I am.</span>
+            </h2>
           </div>
 
-          <div class="about-text">
+          <div class="about-content">
             <p>
-              I'm a developer passionate about the process of turning a blank
-              canvas into something useful, beautiful, and alive on the
-              internet.
+              I am Anthony W. Maina, a software developer interested in creating
+              practical, reliable, and user-friendly applications. I enjoy
+              working across frontend and backend technologies, learning new
+              tools, and solving real-world problems through code.
             </p>
 
             <p>
-              My journey is built on curiosity, consistency, and hands-on
-              experience. I enjoy solving problems, exploring new technologies,
-              and pushing myself to create projects that are better than the
-              last.
+              My development interests include web application development, API
+              design, database systems, application security, and responsive
+              user interfaces.
             </p>
-
-            <p>
-              I believe the best way to grow is to keep building — one project,
-              one challenge, and one line of code at a time.
-            </p>
-
-            <a href="#projects" class="text-link">
-              See what I've been building <span aria-hidden="true">↗</span>
-            </a>
           </div>
         </div>
       </section>
 
       <!-- Projects -->
-
-      <section class="projects section" id="projects">
+      <section class="projects-section section" id="projects">
         <div class="container">
           <div class="section-heading">
-            <p class="section-label">MY WORK</p>
-            <h2>Featured Projects</h2>
+            <span class="section-index">02 / SELECTED WORK</span>
+
+            <h2>
+              Projects that
+              <span class="text-muted">show my work.</span>
+            </h2>
+
             <p>
-              A selection of web applications I've built, demonstrating my
-              skills in full-stack development and problem-solving.
+              A selection of software projects demonstrating my development
+              skills and practical experience.
             </p>
           </div>
 
           <div class="projects-grid">
-            <!-- Project 1: Odin Book -->
             <article class="project-card">
-              <div class="project-content">
-                <span class="project-category">Full-Stack Application</span>
-                <h3>Odin Book</h3>
-                <p>
-                  A social networking application where users can connect, share
-                  posts, interact, and manage their profiles.
-                </p>
-                <div class="project-tech">
-                  <span>JavaScript</span>
-                  <span>Node.js</span>
-                  <span>PostgreSQL</span>
-                  <span>Prisma</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://odin-book-klu5.onrender.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Demo ↗
-                  </a>
-                  <a
-                    href="https://github.com/TechThaPlug/odin-book"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
-              </div>
+              <span class="project-number">01</span>
+
+              <h3>Odin Book</h3>
+
+              <p>
+                A social networking application featuring user accounts,
+                profiles, and interactive social functionality.
+              </p>
+
+              <a
+                href="https://github.com/TechThaPlug/odin-book"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project ↗
+              </a>
             </article>
 
-            <!-- Project 2: Odin Messaging App -->
             <article class="project-card">
-              <div class="project-content">
-                <span class="project-category">Messaging Application</span>
-                <h3>Odin Messaging App</h3>
-                <p>
-                  A messaging application focused on user authentication,
-                  private conversations, and secure message handling.
-                </p>
-                <div class="project-tech">
-                  <span>JavaScript</span>
-                  <span>Node.js</span>
-                  <span>Express</span>
-                  <span>PostgreSQL</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/TechThaPlug/odin-messaging-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project ↗
-                  </a>
-                  <a
-                    href="https://github.com/TechThaPlug/odin-messaging-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
-              </div>
+              <span class="project-number">02</span>
+
+              <h3>Odin Messaging App</h3>
+
+              <p>
+                A messaging application project focused on communication,
+                backend functionality, and secure user authentication.
+              </p>
+
+              <a
+                href="https://github.com/TechThaPlug/odin-messaging-app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project ↗
+              </a>
             </article>
 
-            <!-- Project 3: Odin Where's Waldo -->
             <article class="project-card">
-              <div class="project-content">
-                <span class="project-category">Interactive Web Game</span>
-                <h3>Odin Where's Waldo</h3>
-                <p>
-                  An interactive image-search game where players find hidden
-                  characters and test their observation skills.
-                </p>
-                <div class="project-tech">
-                  <span>JavaScript</span>
-                  <span>Node.js</span>
-                  <span>Express</span>
-                  <span>PostgreSQL</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/TechThaPlug/odin-wheres-waldo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project ↗
-                  </a>
-                  <a
-                    href="https://github.com/TechThaPlug/odin-wheres-waldo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
-              </div>
+              <span class="project-number">03</span>
+
+              <h3>Odin Where's Waldo</h3>
+
+              <p>
+                An interactive browser game involving image exploration,
+                character identification, and game logic.
+              </p>
+
+              <a
+                href="https://github.com/TechThaPlug/odin-wheres-waldo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project ↗
+              </a>
             </article>
           </div>
         </div>
       </section>
 
       <!-- Skills -->
-      <section class="skills section container" id="skills">
-        <div class="section-heading">
-          <span class="section-index">03 / TOOLKIT</span>
-          <h2>My tools of <span class="text-muted">the trade.</span></h2>
-        </div>
+      <section class="skills-section section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-index">03 / TECHNICAL SKILLS</span>
 
-        <div class="skills-content">
-          <div class="skills-intro">
+            <h2>
+              Tools I use to
+              <span class="text-muted">build things.</span>
+            </h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Node.js</div>
+            <div class="skill-item">Express.js</div>
+            <div class="skill-item">PostgreSQL</div>
+            <div class="skill-item">Prisma</div>
+            <div class="skill-item">Git & GitHub</div>
+            <div class="skill-item">REST APIs</div>
+            <div class="skill-item">Application Security</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume -->
+      <section class="resume-section section" id="resume">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-index">04 / MY RESUME</span>
+
+            <h2>
+              My professional
+              <span class="text-muted">journey.</span>
+            </h2>
+
             <p>
-              Technologies I use to bring ideas from concept to reality — and
-              the tools I'm continuously mastering.
+              Explore my education, technical skills, and software development
+              projects in my professional resume.
             </p>
           </div>
 
-          <div class="skills-groups">
-            <div class="skill-group">
-              <h3>FRONTEND</h3>
-              <div class="skill-list">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Responsive Design</span>
-                <span>React</span>
+          <div class="resume-content">
+            <div class="resume-information">
+              <div class="resume-icon">&lt;/&gt;</div>
+
+              <h3>Anthony W. Maina</h3>
+
+              <p class="resume-role">Junior Full-Stack Developer</p>
+
+              <p class="resume-description">
+                Interested in building responsive web applications, developing
+                secure backend systems, and creating practical software
+                solutions.
+              </p>
+
+              <div class="resume-actions">
+                <a
+                  href="assets/documents/Anthony-W-Maina-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary"
+                >
+                  View Full Resume ↗
+                </a>
+
+                <a
+                  href="assets/documents/Anthony-W-Maina-Resume.pdf"
+                  download="Anthony-W-Maina-Resume.pdf"
+                  class="btn btn-secondary"
+                >
+                  Download Resume ↓
+                </a>
               </div>
             </div>
 
-            <div class="skill-group">
-              <h3>BACKEND</h3>
-              <div class="skill-list">
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>REST APIs</span>
-                <span>PostgreSQL</span>
-                <span>Prisma</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <h3>TOOLS &amp; WORKFLOW</h3>
-              <div class="skill-list">
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>npm</span>
-                <span>VS Code</span>
-                <span>Deployment</span>
-              </div>
+            <div class="resume-preview">
+              <iframe
+                src="assets/documents/Anthony-W-Maina-Resume.pdf#toolbar=0&navpanes=0"
+                title="Anthony W. Maina professional resume preview"
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Contact -->
-      <section class="contact section container" id="contact">
-        <span class="section-index">04 / CONTACT</span>
+      <section class="contact-section section" id="contact">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-index">05 / CONTACT</span>
 
-        <div class="contact-content">
-          <p class="contact-eyebrow">HAVE AN IDEA? LET'S MAKE IT REAL.</p>
+            <h2>
+              Have a project in
+              <span class="text-muted">mind?</span>
+            </h2>
 
-          <h2>Let's build something <span class="text-muted">great.</span></h2>
+            <p>
+              I'm open to discussing software development opportunities,
+              collaborations, and interesting projects.
+            </p>
+          </div>
 
-          <p class="contact-description">
-            Whether it's an opportunity, collaboration, interesting project, or
-            just a conversation about tech — my inbox is open.
-          </p>
-
-          <a
-            href="mailto:monyoski888@gmail.com"
-            class="btn btn-primary contact-button"
-          >
-            Email Me
-          </a>
-
-          <div class="contact-socials">
-            <a
-              href="https://github.com/TechThaPlug"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub ↗
+          <div class="contact-content">
+            <a href="mailto:monyoski888@gmail.com" class="contact-email">
+              monyoski888@gmail.com ↗
             </a>
-            <!-- Add verified social profile URLs here when ready -->
+
+            <div class="social-links">
+              <a
+                href="https://github.com/TechThaPlug"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+
+              <a href="mailto:monyoski888@gmail.com"> Email ↗ </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-inner container">
-        <a href="#top" class="logo footer-logo">
-          <span class="logo-mark">&lt;/&gt;</span>
-          <span>TechThaPlug<span class="logo-dot">.</span></span>
-        </a>
-
-        <p>Designed &amp; built with intention.</p>
-
-        <p class="copyright">
-          © <span id="current-year"></span> TechThaPlug. All rights reserved.
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          © <span id="current-year"></span> Anthony W. Maina. All rights
+          reserved.
         </p>
+
+        <a href="#home">Back to top ↑</a>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

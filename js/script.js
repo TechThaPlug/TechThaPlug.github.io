@@ -1,104 +1,89 @@
 "use strict";
 
-/* =========================================
-   TECHTHAPLUG — PORTFOLIO INTERACTIONS
-========================================= */
+/* TECHTHAPLUG — accessible portfolio interactions */
+(() => {
+  const menuButton = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector("#nav-links");
+  const navLinks = document.querySelectorAll("#nav-links a");
+  const yearElement = document.querySelector("#current-year");
 
-/* 1. Mobile navigation */
-const menuToggle = document.querySelector("#menu-toggle");
-const navLinks = document.querySelector("#nav-links");
-const navigationLinks = document.querySelectorAll(".nav-link");
+  // Keep the footer year current without requiring manual edits.
+  if (yearElement) {
+    yearElement.textContent = String(new Date().getFullYear());
+  }
 
-function closeMenu() {
-  if (!menuToggle || !navLinks) return;
+  // Mobile navigation: supports keyboard, outside click and Escape.
+  const closeMenu = ({ returnFocus = false } = {}) => {
+    if (!menuButton || !navMenu) return;
 
-  navLinks.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open navigation menu");
-}
+    navMenu.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation menu");
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
+    if (returnFocus) menuButton.focus();
+  };
 
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu",
-    );
-  });
+  if (menuButton && navMenu) {
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") !== "true";
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu",
+      );
+      navMenu.classList.toggle("is-open", isOpen);
+    });
 
-  navigationLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => closeMenu());
+    });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-      menuToggle.focus();
-    }
-  });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu({ returnFocus: true });
+    });
 
-  document.addEventListener("click", (event) => {
-    if (
-      !navLinks.contains(event.target) &&
-      !menuToggle.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
+    document.addEventListener("click", (event) => {
+      if (
+        menuButton.getAttribute("aria-expanded") === "true" &&
+        !navMenu.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 680) {
-      closeMenu();
-    }
-  });
-}
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 680) closeMenu();
+    });
 
-/* 2. Automatically update copyright year */
-const currentYear = document.querySelector("#current-year");
+    window.addEventListener("pageshow", () => closeMenu());
+  }
 
-if (currentYear) {
-  currentYear.textContent = new Date().getFullYear();
-}
-
-/* 3. Scroll reveal animations */
-const revealElements = document.querySelectorAll(
-  ".section-heading, .about-content, .project-card, .skills-content, .contact-content",
-);
-
-const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-  revealElements.forEach((element) => {
-    element.classList.add("visible");
-  });
-} else {
-  revealElements.forEach((element) => {
-    element.classList.add("reveal");
-  });
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
-    },
+  // Reveal content as it enters the viewport. The page remains readable
+  // when reduced motion is requested or IntersectionObserver is unavailable.
+  const revealTargets = document.querySelectorAll(
+    ".section-heading, .about-aside, .about-copy, .project-card, .skills-intro, .skill-group, .resume-card, .resume-preview-wrap, .contact-inner",
   );
 
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
-}
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-/* 4. Close navigation when browser navigates back */
-window.addEventListener("pageshow", closeMenu);
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    revealTargets.forEach((element) => element.classList.add("reveal"));
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
+    );
+
+    revealTargets.forEach((element) => observer.observe(element));
+  }
+})();
